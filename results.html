@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block main %}
+    <h1>Recommended Primers</h1>
+    <h3>Read the explanation behind the primers <a href="/why">here</a></h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Forward Primer</th>
+          <th scope="col">Forward Primer Tm (&#8451)</th>
+          <th scope="col">Reverse Primer</th>
+          <th scope="col">Reverse Primer Tm (&#8451)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pair in recommended_primers %}
+            <tr>
+              <th scope="row">{{ recommended_primers.index(pair) + 1 }}</th>
+              <td>{{ pair[0] }}</td>
+              <td>{{ pair[2] }} </td>
+              <td>{{ pair[1] }}</td>
+              <td>{{ pair[3] }}</td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+{% endblock %}

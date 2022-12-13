@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Input
+{% endblock %}
+
+{% block main %}
+    <h1>Why did the tool generate these primers?</h1>
+    <div>
+        <body>
+            All primer pairs generated from the input sequence are scored according to the following criteria:
+        </body>
+        <ul class = "mx-auto w-50">
+            <li>G/C clamp: +1 for each primer</li>
+            <li>GC content between 40% and 60%: +1 for each primer</li>
+            <li>Tm between specified minimum and maximum Tm: +1 for each primer </li>
+            <li>Tm within 5&#8451 of each other: +1</li>
+        </ul>
+        <body>The highest scoring pairs are then returned.</body>
+    </div>
+
+{% endblock %}

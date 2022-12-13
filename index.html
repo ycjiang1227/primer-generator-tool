@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Input
+{% endblock %}
+
+{% block main %}
+    <h1>PCR Primer Generator</h1>
+    <form action="/generate" method="post">
+        <div class="form-group pb-2">
+            <label for="DNA-sequence">Enter DNA Sequence:</label>
+            <textarea autofocus class="form-control mx-auto w-50" id="DNA-sequence" name="sequence" rows="2"></textarea>
+        </div>
+        <div class="row mx-auto w-50 pb-2">
+            <div class="col">
+                <label for="min-Tm">Mininum Tm</label>
+                <input type="text" class="form-control" id="min-Tm" name ="min-Tm" placeholder="Minimum Tm">
+            </div>
+            <div class="col">
+              <label for="max-Tm">Maximum Tm</label>
+              <input type="text" class="form-control" id="max-Tm" name="max-Tm" placeholder="Maximum Tm">
+            </div>
+        </div>
+
+        <div class="form-control-sm">
+            <button class="btn btn-primary" type="submit">Get Primers</button>
+        </div>
+    </form>
+
+{% endblock %}
